@@ -23,6 +23,7 @@ const App = () => {
     }
 
     dispatch({ type: 'ADD_NOTE', payload: newNote })
+    setNoteInput('')
   }
 
   const dropNote = (e) => {
