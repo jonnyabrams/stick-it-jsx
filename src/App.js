@@ -38,12 +38,15 @@ const App = () => {
 
   return (
     <div className="App" onDragOver={dragOver}>
-       <h1>Stick It!</h1>
+       <h1>Stick It! <span className='h1-span'>({ notesState.totalNotes === 1 ? "1 note" : `${notesState.totalNotes} notes` })</span></h1>
+
+       <span className='created-at'>{ notesState.totalNotes > 0 ? `Last note created at: ${notesState.lastNoteCreatedAt}` : '' }</span>
+
        <form onSubmit={addNote} className='note-form'>
          <textarea
            value={noteInput} 
            onChange={(e) => setNoteInput(e.target.value)}
-           placeholder="Get sticky?"
+           placeholder="Write something..."
          />
          <button>Add</button>
        </form>

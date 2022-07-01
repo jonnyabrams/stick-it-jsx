@@ -16,7 +16,20 @@ body {
 
 h1 {
   color: white;
-  font-size: 50px;
+  font-size: 40px;
+}
+
+.h1-span {
+  font-size: 18px;
+}
+
+.created-at {
+  color: yellow;
+  display: block;
+  color: darken(white, 20%);
+  font-size: 14px;
+  font-style: italic;
+  height: 14px;
 }
 
 .note-form {
