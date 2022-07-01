@@ -68,3 +68,15 @@ button:hover {
   white-space: pre-wrap;
   overflow-y: scroll;
 }
+
+.close {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  right: 15px;
+  transition: transform .3s ease;
+}
+
+.close:hover {
+  transform: scale(1.6);
+}
