@@ -38,7 +38,10 @@ const App = () => {
 
        {
         notesState.notes.map(note => (
-          <div className='note'>
+          <div
+            className='note'
+            style={{ transform: `rotate(${note.rotate}deg)`}}
+          >
             <pre className='text'>{note.text}</pre>
           </div>
         ))
