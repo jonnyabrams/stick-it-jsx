@@ -26,7 +26,7 @@ const App = () => {
   }
   return (
     <div className="App">
-       <h1>Stick It</h1>
+       <h1>Stick It!</h1>
        <form onSubmit={addNote} className='note-form'>
          <textarea
            value={noteInput} 
@@ -35,6 +35,14 @@ const App = () => {
          />
          <button>Add</button>
        </form>
+
+       {
+        notesState.notes.map(note => (
+          <div className='note'>
+            <pre className='text'>{note.text}</pre>
+          </div>
+        ))
+       }
     </div>
   );
 }
