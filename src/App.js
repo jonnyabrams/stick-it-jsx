@@ -1,7 +1,8 @@
-import { useState, useReducer } from 'react';
-import './App.css';
-import { initialNotesState } from './context/NotesContext';
-import notesReducer from './context/notesReducer';
+import { useState, useReducer } from 'react'
+import './App.css'
+import { initialNotesState } from './context/NotesContext'
+import notesReducer from './context/notesReducer'
+import { v4 as uuid } from 'uuid'
 
 const App = () => {
   const [noteInput, setNoteInput] = useState('')
@@ -16,7 +17,9 @@ const App = () => {
     }
 
     const newNote = {
-      text: noteInput
+      id: uuid(),
+      text: noteInput,
+      rotate: Math.floor(Math.random() * 20)
     }
 
     dispatch({ type: 'ADD_NOTE', payload: newNote })
