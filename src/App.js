@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import './App.css';
 
-function App() {
+const App = () => {
+
+  const [noteInput, setNoteInput] = useState('')
 
   const addNote = () => {
 
@@ -9,7 +12,11 @@ function App() {
     <div className="App">
        <h1>Stick It</h1>
        <form onSubmit={addNote} className='note-form'>
-         <textarea placeholder="Get sticky?"></textarea>
+         <textarea
+           value={noteInput} 
+           onChange={(e) => setNoteInput(e.target.value)}
+           placeholder="Get sticky?"
+         />
          <button>Add</button>
        </form>
     </div>
