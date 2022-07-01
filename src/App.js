@@ -24,8 +24,19 @@ const App = () => {
 
     dispatch({ type: 'ADD_NOTE', payload: newNote })
   }
+
+  const dropNote = (e) => {
+    e.target.style.left = `${e.pageX - 50}px`
+    e.target.style.top = `${e.pageY - 50}px`
+  }
+
+  const dragOver = (e) => {
+    e.stopPropagation()
+    e.preventDefault()
+  }
+
   return (
-    <div className="App">
+    <div className="App" onDragOver={dragOver}>
        <h1>Stick It!</h1>
        <form onSubmit={addNote} className='note-form'>
          <textarea
@@ -41,6 +52,9 @@ const App = () => {
           <div
             className='note'
             style={{ transform: `rotate(${note.rotate}deg)`}}
+            draggable="true"
+            onDragEnd={dropNote}
+            key={note.id}
           >
             <pre className='text'>{note.text}</pre>
           </div>
