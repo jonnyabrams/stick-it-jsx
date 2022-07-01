@@ -6,8 +6,14 @@ const notesReducer = (state, action) => {
         totalNotes: state.notes.length + 1,
         notes: [...state.notes, action.payload]
       }
-      console.log(newState)
       return newState
+    case 'DELETE_NOTE':
+      const deleteNewState = {
+        ...state,
+        totalNotes: state.notes.length - 1,
+        notes: state.notes.filter(note => note.id !== action.payload.id)
+      }
+      return deleteNewState
     default:
       return
   }
