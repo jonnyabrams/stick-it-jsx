@@ -2,6 +2,8 @@
 
 A drag-and-drop sticky notes app using React.js. Users can enter reminders into a form and create sticky notes to pin to the wall. These notes can be dragged and dropped anywhere on the wall, and they appear with a random rotation to make it look suitably haphazard.
 
+<img width="1436" alt="Screenshot 2022-07-01 at 13 36 26" src="https://user-images.githubusercontent.com/97295867/176896889-f53bbe22-b6fb-44b3-af99-35d9898f8dd5.png">
+
 ---
 
 ## Technologies/resources used
@@ -24,6 +26,8 @@ A drag-and-drop sticky notes app using React.js. Users can enter reminders into 
 ---
 
 ## Video demo
+
+https://user-images.githubusercontent.com/97295867/176896821-451f95e4-8b88-49b2-8672-5dbfdb40ebd5.mp4
 
 ---
 
