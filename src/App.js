@@ -1,12 +1,25 @@
-import { useState } from 'react';
+import { useState, useReducer } from 'react';
 import './App.css';
+import { initialNotesState } from './context/NotesContext';
+import notesReducer from './context/notesReducer';
 
 const App = () => {
-
   const [noteInput, setNoteInput] = useState('')
+  const [notesState, dispatch] = useReducer(notesReducer, initialNotesState)
+  
+  const addNote = (e) => {
+    e.preventDefault()
+    
+    // Stop it from adding an empty note
+    if (!noteInput) {
+      return
+    }
 
-  const addNote = () => {
+    const newNote = {
+      text: noteInput
+    }
 
+    dispatch({ type: 'ADD_NOTE', payload: newNote })
   }
   return (
     <div className="App">
